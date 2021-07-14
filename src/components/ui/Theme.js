@@ -28,11 +28,11 @@ export default createMuiTheme({
         color: " #8cca67"
       }
     },
-    estimate: {
-      fontFamily: "Pacifico",
-      fontSize: "1",
-      textTransform: "none",
-      color: "white"
+    iconButton: {
+      color:"#FFFF",
+      "&:hover": {
+       background:"transparent"
+      }
     },
     h2: {
       fontFamily: "Raleway",
