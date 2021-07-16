@@ -22,7 +22,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 import Typography from "@material-ui/core/Typography";
 
-import Kart from "./kart/Kart"
+import Cart from "./cart/Cart"
 
 import headerBackground from "../../assets/headerBG.jpg";
 import logo from "../../assets/logo.png";
@@ -344,7 +344,7 @@ function Header(props) {
           </React.Fragment>
         </Grid>
         <Grid item sm className={classes.navbarContainer}>
-          <Kart/>
+          <Cart/>
         </Grid>
       </Grid>
     </Grid>

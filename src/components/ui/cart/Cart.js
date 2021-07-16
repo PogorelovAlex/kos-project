@@ -5,6 +5,7 @@ import { useTheme } from "@material-ui/core/styles";
 
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
+import ToggleButton from '@material-ui/lab/ToggleButton';
 
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
@@ -52,14 +53,39 @@ const useStyles = makeStyles(theme => ({
         }
     },
     ruButton:{
+        active:{
+            '&$selected': {
+                color: "#black",
+                backgroundColor: "#ffff",
+                '&:hover': {
+                    backgroundColor: "#ffff",
+                },
+                '& + &': {
+                  borderLeft: 0,
+                  marginLeft: 0
+                }
+              },
+            },
         ...theme.typography.iconButton,
-    },
+        borderRadius:"50%",
+    
+},
     roButton:{
         ...theme.typography.iconButton,
     },
+    active:{
+
+    },
+    langContainer:{
+        width:"auto"
+    },
+    
 }));
 
-function Kart() {
+
+
+function Cart() {
+const [selected, setSelected] = React.useState(false);
 
  const classes = useStyles();
   const theme = useTheme();
@@ -87,14 +113,20 @@ function Kart() {
             Корзина
             </Button>
             </Grid>
-            
+            <Grid container direction="row" className={classes.langContainer}>
             <Grid item>
-            <Button
+            <ToggleButton
              className ={classes.ruButton}
+             classes ={{active:classes.active}}
+             selected={selected}
+             onChange={() => {
+                    setSelected(!selected);
+                }}
             >
             RU
-            </Button>
+            </ToggleButton>
             </Grid>
+
             <Grid item>
             <Button
              className ={classes.roButton}
@@ -103,8 +135,11 @@ function Kart() {
             </Button>
             </Grid>
         </Grid>
+
+
+        </Grid>
     </Grid>
   );
 }
 
-export default Kart;
+export default Cart;
