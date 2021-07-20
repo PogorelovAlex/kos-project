@@ -1,13 +1,15 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import "./fonts.css";
 
 const arcBlue = "#0B72B9";
 const arcOrange = "#FFBA60";
 const arcGrey = "#868686";
+const white = "#fff"
 
-export default createMuiTheme({
+export default createTheme({
   palette: {
     common: {
+      white:`${white}`,
       arcblue: `${arcBlue}`,
       arcorange: `${arcOrange}`
     },
@@ -31,7 +33,8 @@ export default createMuiTheme({
     iconButton: {
       color:"#FFFF",
       "&:hover": {
-       background:"transparent"
+        color:"#8cca67",
+       background:"#FFFF"
       }
     },
     h2: {
@@ -88,11 +91,25 @@ export default createMuiTheme({
     }
   },
   overrides: {
+    MuiToggleButton: {
+      root: {
+        "&$selected": {
+          backgroundColor: "#fff",
+          color:"#8cca67",
+       
+        "&:hover": {
+          backgroundColor: "rgba(255,255,255,0.7)",
+          color:"#8cca67"
+        },
+      },
+      }
+    },
     MuiInputLabel: {
       root: {
         color: arcBlue,
         fontSize: "1rem"
       }
+    },
     },
     MuiInput: {
       root: {
@@ -108,5 +125,4 @@ export default createMuiTheme({
         }
       }
     }
-  }
 });

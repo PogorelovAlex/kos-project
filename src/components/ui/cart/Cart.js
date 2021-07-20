@@ -1,17 +1,20 @@
 import React,{ useState } from "react";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles,withStyles } from "@material-ui/styles";
 import { useTheme } from "@material-ui/core/styles";
 
 
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) =>({
+ 
+    
     mainContainer:{
 
     },
@@ -28,7 +31,6 @@ const useStyles = makeStyles(theme => ({
         fontSize: "30px",
         lineHeight: "27px",
        
-
         "&:hover": {
             backgroundColor: "transparent",
             color:"#8cca67",
@@ -53,42 +55,44 @@ const useStyles = makeStyles(theme => ({
         }
     },
     ruButton:{
-        active:{
-            '&$selected': {
-                color: "#black",
-                backgroundColor: "#ffff",
-                '&:hover': {
-                    backgroundColor: "#ffff",
-                },
-                '& + &': {
-                  borderLeft: 0,
-                  marginLeft: 0
-                }
-              },
-            },
         ...theme.typography.iconButton,
-        borderRadius:"50%",
-    
 },
     roButton:{
-        ...theme.typography.iconButton,
+        ...theme.typography.iconButton,   
     },
-    active:{
-
-    },
+    
     langContainer:{
         width:"auto"
     },
     
 }));
 
-
+const StyledToggleButtonGroup = withStyles((theme) => ({
+    grouped: {
+      margin: theme.spacing(0.5),
+      border: 'none',
+      '&:not(:first-child)': {
+        borderRadius: "50%",
+      },
+      '&:first-child': {
+        borderRadius: "50%",
+      },
+    },
+  }))(ToggleButtonGroup);
 
 function Cart() {
-const [selected, setSelected] = React.useState(false);
+
+const [alignment, setAlignment] = React.useState('left');
+
+const handleAlignment = (event, newAlignment) => {
+    if (newAlignment !== null) {
+      setAlignment(newAlignment);
+    }
+  };
 
  const classes = useStyles();
-  const theme = useTheme();
+ const theme = useTheme();
+
   return (
     <Grid container direction="column" className={classes.mainContainer}>
         <Grid item  className={classes.phoneContainer} >
@@ -114,26 +118,32 @@ const [selected, setSelected] = React.useState(false);
             </Button>
             </Grid>
             <Grid container direction="row" className={classes.langContainer}>
-            <Grid item>
+            
+            <StyledToggleButtonGroup
+            value={alignment}
+            exclusive
+            onChange={handleAlignment}
+            aria-label="text alignment"
+          >
             <ToggleButton
+             value="left" 
+             aria-label="left aligned"
              className ={classes.ruButton}
-             classes ={{active:classes.active}}
-             selected={selected}
-             onChange={() => {
-                    setSelected(!selected);
-                }}
             >
             RU
             </ToggleButton>
-            </Grid>
-
-            <Grid item>
-            <Button
+           
+            <ToggleButton
+             
+             value="center" 
+             aria-label="centered"
              className ={classes.roButton}
+            
             >
             RO
-            </Button>
-            </Grid>
+            </ToggleButton>
+            
+            </StyledToggleButtonGroup>
         </Grid>
 
 

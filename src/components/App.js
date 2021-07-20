@@ -5,6 +5,7 @@ import { HashRouter, BrowserRouter, Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
 
 import Header from "./ui/Header";
+import LandingPage from "./LandingPage";
 
 
 
@@ -38,11 +39,19 @@ function App() {
           selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}
         />
+        
+
      <Switch>
           <Route
             exact
             path="/"
-            component={()=><div>Home</div>}
+            render={props => (
+              <LandingPage
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
