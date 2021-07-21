@@ -11,18 +11,47 @@ import { Typography } from "@material-ui/core";
 import Slickslider from "./ui/slider/Slickslider";
 
 const useStyles = makeStyles(theme => ({
-  mainContainer:{
-    alignItems:"center",
+  mainContainer: {
+    alignItems: "center"
   },
-  contentContainer:{
-    alignItems:"center",
-    
-    width:"1140px",
+  contentContainer: {
+    alignItems: "center",
+
+    width: "1140px"
   },
-  devider:{
-    width:"100%",
-    height:"1px",
-    backgroundColor:"#dad9e9",
+  devider: {
+    width: "100%",
+    position: "relative",
+    zIndex: "1",
+    overflow: "hidden",
+    textAlign: "center",
+    fontSize: "16px",
+    color: "#696763",
+
+    "&:before": {
+      content: "''",
+      display: "block",
+      width: "40%",
+      height: "1px",
+      background: "#696763",
+      opacity: "0.35",
+      zIndex: -1,
+      position: "absolute",
+      bottom: "10px",
+      right: "1px"
+    },
+    "&:after": {
+      content: "''",
+      display: "block",
+      width: "40%",
+      height: "1px",
+      background: "#696763",
+      opacity: "0.35",
+      zIndex: -1,
+      position: "absolute",
+      bottom: "10px",
+      left: "1px"
+    }
   }
 }));
 
@@ -32,15 +61,19 @@ function LandingPage() {
 
   return (
     <Grid container>
-    <Grid container direction="column" className={classes.mainContainer}>
-      <Slickslider />
-    
-    <Grid item container  direction="column" className ={classes.contentContainer}>
-      <Grid item className={classes.devider}></Grid>
-    <Typography>ХИТ ПРОДАЖ</Typography>
-  </Grid>
-  </Grid>
-  </Grid>
+      <Grid container direction="column" className={classes.mainContainer}>
+        <Slickslider />
+
+        <Grid
+          item
+          container
+          direction="column"
+          className={classes.contentContainer}
+        >
+          <div className={classes.devider}>ХИТ ПРОДАЖ</div>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }
 
