@@ -12,9 +12,18 @@ import Slickslider from "./ui/slider/Slickslider";
 
 const useStyles = makeStyles(theme => ({
   mainContainer:{
-    
     alignItems:"center",
   },
+  contentContainer:{
+    alignItems:"center",
+    
+    width:"1140px",
+  },
+  devider:{
+    width:"100%",
+    height:"1px",
+    backgroundColor:"#dad9e9",
+  }
 }));
 
 function LandingPage() {
@@ -22,9 +31,16 @@ function LandingPage() {
   const theme = useTheme();
 
   return (
+    <Grid container>
     <Grid container direction="column" className={classes.mainContainer}>
       <Slickslider />
-    </Grid>
+    
+    <Grid item container  direction="column" className ={classes.contentContainer}>
+      <Grid item className={classes.devider}></Grid>
+    <Typography>ХИТ ПРОДАЖ</Typography>
+  </Grid>
+  </Grid>
+  </Grid>
   );
 }
 
