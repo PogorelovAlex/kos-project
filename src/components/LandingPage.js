@@ -9,6 +9,7 @@ import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import { Typography } from "@material-ui/core";
 
 import Slickslider from "./ui/slider/Slickslider";
+import CardsHitGroup from "./ui/cardsHitGroup/CardsHitGroup";
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {
@@ -16,7 +17,6 @@ const useStyles = makeStyles(theme => ({
   },
   contentContainer: {
     alignItems: "center",
-
     width: "1140px"
   },
   devider: {
@@ -71,6 +71,9 @@ function LandingPage() {
           className={classes.contentContainer}
         >
           <div className={classes.devider}>ХИТ ПРОДАЖ</div>
+        </Grid>
+        <Grid item>
+        <CardsHitGroup/>
         </Grid>
       </Grid>
     </Grid>

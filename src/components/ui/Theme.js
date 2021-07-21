@@ -1,8 +1,8 @@
 import { createTheme } from "@material-ui/core/styles";
 import "./fonts.css";
 
-const arcBlue = "#0B72B9";
-const arcOrange = "#FFBA60";
+const mainGreen = "#8cca67";
+const kosOrange = "#FFBA60";
 const arcGrey = "#868686";
 const white = "#fff"
 
@@ -10,14 +10,14 @@ export default createTheme({
   palette: {
     common: {
       white:`${white}`,
-      arcblue: `${arcBlue}`,
-      arcorange: `${arcOrange}`
+      maingreen: `${mainGreen}`,
+      kosorange: `${kosOrange}`
     },
     primary: {
-      main: `${arcBlue}`
+      main: `${mainGreen}`
     },
     secondary: {
-      main: `${arcOrange}`
+      main: `${kosOrange}`
     }
   },
   typography: {
@@ -41,24 +41,24 @@ export default createTheme({
       fontFamily: "Raleway",
       fontWeight: 700,
       fontSize: "2.5rem",
-      color: arcBlue,
+      color: mainGreen,
       lineHeight: 1.5
     },
     h3: {
       fontFamily: "Pacifico",
       fontSize: "2.5rem",
-      color: arcBlue
+      color: mainGreen
     },
     h4: {
       fontFamily: "Raleway",
       fontSize: "1.75rem",
-      color: arcBlue,
+      color: mainGreen,
       fontWeight: 700
     },
     h6: {
       fontWeight: 500,
       fontFamily: "Raleway",
-      color: arcBlue
+      color: mainGreen
     },
     subtitle1: {
       fontSize: "1.25rem",
@@ -81,9 +81,9 @@ export default createTheme({
       color: arcGrey
     },
     learnButton: {
-      borderColor: arcBlue,
+      borderColor: mainGreen,
       borderWidth: 2,
-      color: arcBlue,
+      color: mainGreen,
       textTransform: "none",
       borderRadius: 50,
       fontFamily: "Roboto",
@@ -111,22 +111,22 @@ export default createTheme({
     },
     MuiInputLabel: {
       root: {
-        color: arcBlue,
+        color: mainGreen,
         fontSize: "1rem"
       }
     },
     },
     MuiInput: {
       root: {
-        color: arcGrey,
+        color: mainGreen,
         fontWeight: 300
       },
       underline: {
         "&:before": {
-          borderBottom: `2px solid ${arcBlue}`
+          borderBottom: `2px solid ${mainGreen}`
         },
         "&:hover:not($disabled):not($focused):not($error):before": {
-          borderBottom: `2px solid ${arcBlue}`
+          borderBottom: `2px solid ${mainGreen}`
         }
       }
     }

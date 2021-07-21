@@ -22,7 +22,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 import Typography from "@material-ui/core/Typography";
 
-import Cart from "./cart/Cart"
+import Cart from "./cart/Cart";
 
 import headerBackground from "../../assets/headerBG.jpg";
 import logo from "../../assets/logo.png";
@@ -84,18 +84,16 @@ const useStyles = makeStyles(theme => ({
     marginRight: "3.5rem"
   },
   tabContainer: {
-    paddingBottom: "1rem",
-   
+    paddingBottom: "1rem"
   },
   tab: {
     ...theme.typography.tab,
     minWidth: 10,
-    marginLeft: "12px",
-    
+    marginLeft: "12px"
   },
 
   menu: {
-    backgroundColor: theme.palette.common.arcblue,
+    backgroundColor: theme.palette.common.arcGrey,
     color: "white",
     borderRadius: "0px"
   },
@@ -325,7 +323,12 @@ function Header(props) {
     <Grid container direction="column" className={classes.mainContainer}>
       <Grid container className={classes.headerContainer}>
         <Grid item sm className={classes.logo}>
-          <Button className={classes.logoContainer} disableRipple>
+          <Button
+            component={Link}
+            to="/"
+            className={classes.logoContainer}
+            disableRipple
+          >
             <img alt="company logo" src={logo} className={classes.logo} />
           </Button>
         </Grid>
@@ -344,7 +347,7 @@ function Header(props) {
           </React.Fragment>
         </Grid>
         <Grid item sm className={classes.navbarContainer}>
-          <Cart/>
+          <Cart />
         </Grid>
       </Grid>
     </Grid>
