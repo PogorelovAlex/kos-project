@@ -104,6 +104,11 @@ export default createTheme({
       },
       }
     },
+    MuiPaper: {
+      elevation4:{
+        boxShadow:"0",
+      }
+    },
     MuiInputLabel: {
       root: {
         color: arcBlue,

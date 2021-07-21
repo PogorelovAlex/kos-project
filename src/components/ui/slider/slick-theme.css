@@ -1,3 +1,4 @@
+
 @charset 'UTF-8';
 /* Slider */
 .slick-loading .slick-list
@@ -23,7 +24,7 @@
 
     position: absolute;
     top: 50%;
-
+    z-index: 5;
     display: block;
 
     width: 20px;
@@ -34,7 +35,7 @@
     transform: translate(0, -50%);
 
     cursor: pointer;
-
+    
     color: transparent;
     border: none;
     outline: none;
@@ -45,7 +46,7 @@
 .slick-next:hover,
 .slick-next:focus
 {
-    color: transparent;
+    color:transparent;
     outline: none;
     background: transparent;
 }
@@ -55,6 +56,7 @@
 .slick-next:focus:before
 {
     opacity: 1;
+    color:#8cca67;
 }
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before
@@ -66,11 +68,11 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 20px;
+    font-size: 62px;
     line-height: 1;
 
-    opacity: .75;
-    color: white;
+    opacity: 1;
+    color:#c2c2c1;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -78,38 +80,38 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: 25px;
 }
 [dir='rtl'] .slick-prev
 {
-    right: -25px;
+    right: 25px;
     left: auto;
 }
 .slick-prev:before
 {
-    content: '←';
+    content: '‹';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '→';
+    content: '›';
 }
 
 .slick-next
 {
-    right: -25px;
+    right: 25px;
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
-    left: -25px;
+    left: 25px;
 }
 .slick-next:before
 {
-    content: '→';
+    content: '›';
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '←';
+    content: '‹';
 }
 
 /* Dots */
@@ -121,7 +123,7 @@
 .slick-dots
 {
     position: absolute;
-    bottom: -25px;
+    bottom: 30px;
 
     display: block;
 
@@ -139,11 +141,11 @@
 
     display: inline-block;
 
-    width: 20px;
+    width: 10px;
     height: 20px;
     margin: 0 5px;
     padding: 0;
-
+    
     cursor: pointer;
 }
 .slick-dots li button
@@ -177,27 +179,29 @@
 .slick-dots li button:before
 {
     font-family: 'slick';
-    font-size: 6px;
-    line-height: 20px;
+    font-size: 25px;
+    border: solid 1px #8cca67;
+    border-radius: 50%;
 
     position: absolute;
     top: 0;
     left: 0;
 
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
 
-    content: '•';
+    content: '';
     text-align: center;
 
-    opacity: .25;
-    color: black;
+    opacity: 1;
+    color: #8cca67;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button:before
 {
-    opacity: .75;
-    color: black;
+    opacity: 1;
+    background-color: #8cca67;
 }
+

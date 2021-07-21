@@ -10,7 +10,12 @@ import { Typography } from "@material-ui/core";
 
 import Slickslider from "./ui/slider/Slickslider";
 
-const useStyles = makeStyles(theme => ({}));
+const useStyles = makeStyles(theme => ({
+  mainContainer:{
+    
+    alignItems:"center",
+  },
+}));
 
 function LandingPage() {
   const classes = useStyles();
@@ -18,7 +23,6 @@ function LandingPage() {
 
   return (
     <Grid container direction="column" className={classes.mainContainer}>
-      <Typography>Slider</Typography>
       <Slickslider />
     </Grid>
   );
