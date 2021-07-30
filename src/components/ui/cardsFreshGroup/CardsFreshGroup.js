@@ -14,10 +14,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
-import imageUrl1 from "./img/chg-1.jpg";
-import imageUrl2 from "./img/chg-2.jpg";
-import imageUrl3 from "./img/chg-3.jpg";
-import imageUrl4 from "./img/chg-4.jpg";
+import imageUrl1 from "./img/frsh-1.jpg";
+import imageUrl2 from "./img/frsh-2.jpg";
+import imageUrl3 from "./img/frsh-3.jpg";
+import imageUrl4 from "./img/frsh-4.jpg";
 
 const useStyles = makeStyles(theme => ({
   root: {

@@ -10,6 +10,7 @@ import { Typography } from "@material-ui/core";
 
 import Slickslider from "./ui/slider/Slickslider";
 import CardsHitGroup from "./ui/cardsHitGroup/CardsHitGroup";
+import CardsFreshGroup from "./ui/cardsFreshGroup/CardsFreshGroup";
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {
@@ -27,6 +28,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     fontSize: "16px",
     color: "#696763",
+    marginBottom: "18px",
 
     "&:before": {
       content: "''",
@@ -73,7 +75,18 @@ function LandingPage() {
           <div className={classes.devider}>ХИТ ПРОДАЖ</div>
         </Grid>
         <Grid item>
-        <CardsHitGroup/>
+          <CardsHitGroup />
+        </Grid>
+        <Grid
+          item
+          container
+          direction="column"
+          className={classes.contentContainer}
+        >
+          <div className={classes.devider}>НОВИНКИ</div>
+        </Grid>
+        <Grid item>
+          <CardsFreshGroup />
         </Grid>
       </Grid>
     </Grid>

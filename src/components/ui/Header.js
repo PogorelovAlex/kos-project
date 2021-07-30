@@ -242,7 +242,7 @@ function Header(props) {
       >
         {routes.map((route, index) => (
           <Tab
-            key={`${route}${index}`}
+            key={`${route.name}${index}`}
             className={classes.tab}
             component={Link}
             to={route.link}
