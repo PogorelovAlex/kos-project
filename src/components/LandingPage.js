@@ -90,6 +90,7 @@ const useStyles = makeStyles(theme => ({
     display: "block",
     color: "#272727",
     fontSize: "14px",
+    fontFamily: "MuseoSans100,sans-serif",
   },
   aboutText:{
     maxWidth:"1142px",

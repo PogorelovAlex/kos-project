@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Pacifico";
+  src: local("Pacifico"),
+    url(./Pacifico-Regular.ttf) format("truetype");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: "Philosopher";
+  src: local("Philosopher"),
+    url(./Philosopher-Regular.ttf) format("truetype");
+  
+}
+@font-face {
+  font-family: "MuseoSans100";
+  src: local("MuseoSans100"),
+    url(./museosans-100.ttf) format("truetype");
+  
+}

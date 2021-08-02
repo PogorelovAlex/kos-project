@@ -1,5 +1,5 @@
 import { createTheme } from "@material-ui/core/styles";
-import "./fonts.css";
+
 
 const mainGreen = "#8cca67";
 const kosOrange = "#FFBA60";
