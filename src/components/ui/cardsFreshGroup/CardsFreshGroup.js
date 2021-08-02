@@ -63,32 +63,32 @@ function CardsHitGroup(props) {
 
   const cardContent = [
     {
-      title: "mascara",
-      brand: "sp relui bel",
+      title: "fluid",
+      brand: "PARADISO",
       image: imageUrl1,
-      price: "130 леев",
-      contentText: "ТУШЬ ДЛЯ РЕСНИЦ LIFT UP & VOLUME MASCARA LA MIA ITALIA"
+      price: "165 леев",
+      contentText: "ТОНАЛЬНЫЙ КРЕМ-ФЛЮИД С САТИНОВЫМ ФИНИШЕМ PARADISO"
     },
     {
-      title: "fluid",
+      title: "peeling",
       brand: "markell",
       image: imageUrl2,
-      price: "65 леев",
-      contentText: "Флюид для век с муцином улитки ,BIO-HELIX ,Markell 10мл"
+      price: "100 леев",
+      contentText: "МИНДАЛЬНЫЙ ПИЛИНГ ДЛЯ ЛИЦА, Markell Professional"
     },
     {
-      title: "balzam",
-      brand: "markell",
+      title: "patches",
+      brand: "reloius",
       image: imageUrl3,
-      price: "85 леев",
-      contentText: " Бальзам-маска для волос восстанавливающая Markell"
+      price: "325 леев",
+      contentText: "ПАТЧИ ГИДРОГЕЛЕВЫЕ KOREAN SECRET MAKE UP & CARE"
     },
     {
-      title: "crem",
-      brand: "markell",
+      title: "tuosh",
+      brand: "tuosh",
       image: imageUrl4,
-      price: "75 леев",
-      contentText: "Крем-перчатки для рук , с муцином улитки,Markell Bio"
+      price: "325 леев",
+      contentText: " ТУШЬ ДЛЯ РЕСНИЦ TOUCHÉ СУПЕРОБЪЕМ И РАЗДЕЛЕНИЕ КОРИЧНЕВАЯ"
     }
   ];
   const card = (

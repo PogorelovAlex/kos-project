@@ -21,9 +21,9 @@ import imageUrl4 from "./img/chg-4.jpg";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "200px",
+    width: "260px",
     height: "auto",
-    maxHeight: "345px",
+    maxHeight: "405px",
     textAlign: "center",
     "&:hover ": {
       cursor: "pointer",
@@ -31,7 +31,8 @@ const useStyles = makeStyles(theme => ({
     },
     margin: "0 13px 30px 11px",
     padding: "30px",
-    boxShadow: "none"
+    boxShadow: "none",
+    boxSizing: "border-box"
   },
   media: {
     height: "184px",

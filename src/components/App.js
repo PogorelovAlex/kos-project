@@ -5,6 +5,7 @@ import { HashRouter, BrowserRouter, Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
 
 import Header from "./ui/Header";
+import Footer from "./ui/Footer";
 import LandingPage from "./LandingPage";
 
 
@@ -79,6 +80,12 @@ function App() {
             component={()=><div>НОВОСТИ</div>}
           />
         </Switch>
+        <Footer
+          value={value}
+          setValue={setValue}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
       </div>
       </HashRouter>
     </ThemeProvider>
