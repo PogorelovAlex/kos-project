@@ -83,7 +83,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: "25px",
     lineHeight: "1",
     "&:hover": {
-      color: theme.palette.common.maingreen
+      color: theme.palette.common.maingreen,
+      backgroundColor:"transparent"
     }
   },
   newsContentText:{

@@ -15,7 +15,7 @@ import instagram from "../../assets/instagram.svg";
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    backgroundColor: "#5a8d34",
+    background: "#568203",
     width: "100%",
     height: "14rem",
     zIndex: 1302,
@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
   },
   socialContainer: {
     position:"absolute",
-    marginTop:"-6em",
+    bottom:"2em",
     right:"1.5em",
     [theme.breakpoints.down("xs")]: {
       right:"0.6em"
@@ -65,8 +65,18 @@ const useStyles = makeStyles(theme => ({
   footerLogo:{
     color: "white",
     fontFamily:"Pacifico",
-    fontStyle:"italic"
+    fontSize:"28px",
+    fontStyle:"italic",
+    marginBottom:"0"
 
+  },
+  footerLogoText:{
+    color: "white",
+    fontSize:"16px",
+    fontFamily:"Philosopher",
+    fontStyle:"normal",
+    textAlign:"center",
+    
   }
 }));
 
@@ -79,8 +89,17 @@ export default function Footer(props) {
       <Grid container justify="center" className={classes.mainContainer}>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
+            
             <Grid item component={Link} onClick={() => props.setValue(0)} to="/" className={classes.link}>
-              <Typography className={classes.footerLogo}>San Florin</Typography>
+              <Typography className={classes.footerLogo}>
+                San Florin
+                </Typography>
+                <Typography className={classes.footerLogoText}>
+                  cosmetics
+                  </Typography>
+            </Grid>
+            <Grid item component={Link} onClick={() => props.setValue(0)} to="/" className={classes.link}>
+              Следите за нами в соц сетях
             </Grid>
           </Grid>
         </Grid>
