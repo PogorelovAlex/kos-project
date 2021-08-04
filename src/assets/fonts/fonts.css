@@ -23,3 +23,10 @@
     url(./Roboto-Regular.ttf) format("truetype");
   
 }
+
+@font-face {
+  font-family: "RobotoLight";
+  src: local("RobotoLight"),
+    url(./Roboto-Light.ttf) format("truetype");
+  
+}

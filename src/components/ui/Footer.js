@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
 import { Typography } from "@material-ui/core";
 
+import PhoneInTalkOutlinedIcon from "@material-ui/icons/PhoneInTalkOutlined";
 import instagram from "../../assets/instagram.png";
 import vk from "../../assets/vk.png";
 import youtube from "../../assets/youtube.png";
@@ -36,17 +37,18 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     color: "white",
-    fontFamily: "Arial",
-    fontSize: "0,75rem",
-    fontWeight: "bold",
+    fontFamily: "RobotoLight",
+    fontSize: "16px",
     textDecoration: "none"
   },
   gridItem: {
     margin: "3em"
   },
   icon: {
-    height: "2em",
-    width: "2em",
+    height: "34px",
+    width: "34px",
+    marginTop: "6px",
+    padding: "6px",
     [theme.breakpoints.down("xs")]: {
       height: "1.5em",
       width: "1.5em"
@@ -59,20 +61,23 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "Pacifico",
     fontSize: "28px",
     fontStyle: "italic",
-    marginBottom: "0"
+    marginBottom: "0",
+    letterSpacing: "8px"
   },
   footerLogoText: {
     color: "white",
-    fontSize: "16px",
-    fontFamily: "Philosopher",
+    fontSize: "18px",
+    fontFamily: "Roboto",
     fontStyle: "normal",
-    textAlign: "center"
+    textAlign: "center",
+    letterSpacing: "5px"
   },
   iconText: {
     color: "#ffff",
     fontSize: "14px",
     fontFamily: "Roboto",
-    textDecoration: "none"
+    textDecoration: "none",
+    marginTop: "20px"
   },
   iconContainer: {
     marginLeft: "2px",
@@ -82,6 +87,40 @@ const useStyles = makeStyles(theme => ({
     color: "#FFF",
     fontSize: "14px",
     fontFamily: "Roboto"
+  },
+  support: {
+    margin: "3em",
+    textAlign: "right"
+  },
+  phoneIconContainer: {
+    display: "flex",
+    justifyContent: "flex-end"
+  },
+  supportPhone: {
+    color: "#FFF",
+    fontSize: "18px",
+    fontFamily: "RobotoLight",
+    textDecoration: "none",
+    "&:hover": {
+      color: theme.palette.common.kosorange
+    }
+  },
+  supportLogo: {
+    color: "#FFF",
+    fontSize: "2.5rem",
+    marginRight: "5px"
+  },
+  owner: {
+    color: "#FFF",
+    fontSize: "14px",
+    fontFamily: "Roboto",
+    marginTop: "24px"
+  },
+  ownerInfo: {
+    color: "#FFF",
+    fontSize: "14px",
+    fontFamily: "Roboto",
+    margin: "4px 0 4px 0"
   }
 }));
 
@@ -125,7 +164,6 @@ export default function Footer(props) {
                 className={classes.iconContainer}
               >
                 <Grid
-                  item
                   component={"a"}
                   href="http://www.facebook.com"
                   rel="noopener noreferrer"
@@ -138,7 +176,6 @@ export default function Footer(props) {
                   />
                 </Grid>
                 <Grid
-                  item
                   component={"a"}
                   href="http://www.vk.com"
                   rel="noopener noreferrer"
@@ -147,7 +184,6 @@ export default function Footer(props) {
                   <img alt="vk logo" src={vk} className={classes.icon} />
                 </Grid>
                 <Grid
-                  item
                   component={"a"}
                   href="http://www.instagram.com"
                   rel="noopener noreferrer"
@@ -160,7 +196,6 @@ export default function Footer(props) {
                   />
                 </Grid>
                 <Grid
-                  item
                   component={"a"}
                   href="http://www.youtube.com"
                   rel="noopener noreferrer"
@@ -175,8 +210,8 @@ export default function Footer(props) {
               </Grid>
               <Grid item>
                 <Typography className={classes.copyrightBlock}>
-                  <p>Copyright 2021 - ALPO</p>
-                  <p>Разработка и продвижение сайтов:</p>
+                  <p>Copyright 2021 - APO</p>
+                  <p>Разработка и продвижение сайтов: APO</p>
                 </Typography>
               </Grid>
             </Grid>
@@ -189,149 +224,113 @@ export default function Footer(props) {
                 component={Link}
                 onClick={() => {
                   props.setValue(1);
-                  props.setSelectedIndex(0);
                 }}
-                to="/services"
+                to="/company"
               >
-                Services
+                О компании
               </Grid>
 
               <Grid
                 item
                 component={Link}
                 onClick={() => {
-                  props.setValue(1);
-                  props.setSelectedIndex(1);
+                  props.setValue(2);
                 }}
-                to="/customservices"
+                to="/catalog"
                 className={classes.link}
               >
-                Custom Software Development
+                Каталог
               </Grid>
 
               <Grid
                 item
                 component={Link}
                 onClick={() => {
-                  props.setValue(1);
-                  props.setSelectedIndex(2);
+                  props.setValue(3);
                 }}
-                to="/mobileapps"
+                to="/contacts"
                 className={classes.link}
               >
-                IOS/Android App Devepment
+                Контакты
               </Grid>
 
               <Grid
                 item
                 component={Link}
                 onClick={() => {
-                  props.setValue(1);
-                  props.setSelectedIndex(3);
+                  props.setValue(4);
                 }}
-                to="/websites"
+                to="/partners"
                 className={classes.link}
               >
-                Website Development
+                Партнеры
+              </Grid>
+              <Grid
+                item
+                component={Link}
+                onClick={() => {
+                  props.setValue(5);
+                }}
+                to="/news"
+                className={classes.link}
+              >
+                Новости
               </Grid>
             </Grid>
           </Grid>
-          <Grid item className={classes.gridItem}>
-            <Grid container direction="column" spacing={2}>
-              <Grid
-                item
-                component={Link}
-                onClick={() => props.setValue(2)}
-                to="/revolution"
-                className={classes.link}
-              >
-                The Revolution
-              </Grid>
-
-              <Grid
-                item
-                component={Link}
-                onClick={() => props.setValue(2)}
-                to="/revolution"
-                className={classes.link}
-              >
-                Vision
-              </Grid>
-
-              <Grid
-                item
-                component={Link}
-                onClick={() => props.setValue(2)}
-                to="/revolution"
-                className={classes.link}
-              >
-                Technology
-              </Grid>
-
-              <Grid
-                item
-                component={Link}
-                onClick={() => props.setValue(2)}
-                to="/revolution"
-                className={classes.link}
-              >
-                Process
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item className={classes.gridItem}>
-            <Grid container direction="column" spacing={2}>
+          <Grid item className={classes.support}>
+            <Grid
+              container
+              direction="row"
+              className={classes.phoneIconContainer}
+            >
               <Grid
                 item
                 component={Link}
                 onClick={() => props.setValue(3)}
-                to="/about"
-                className={classes.link}
+                to="/contacts"
               >
-                About us
+                <PhoneInTalkOutlinedIcon className={classes.supportLogo} />
               </Grid>
-
-              <Grid
-                item
-                component={Link}
-                onClick={() => props.setValue(3)}
-                to="/about"
-                className={classes.link}
-              >
-                History
-              </Grid>
-
-              <Grid
-                item
-                component={Link}
-                onClick={() => props.setValue(3)}
-                to="/about"
-                className={classes.link}
-              >
-                Team
+              <Grid item className={classes.link}>
+                <Typography className={classes.link}>
+                  Техническая поддержка:
+                </Typography>
+                <Grid
+                  item
+                  component={Link}
+                  onClick={() => props.setValue(3)}
+                  to="/contacts"
+                  className={classes.supportPhone}
+                >
+                  +7 931 58 28 525
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid item className={classes.gridItem}>
             <Grid container direction="column" spacing={2}>
-              <Grid
-                item
-                component={Link}
-                onClick={() => props.setValue(4)}
-                to="/contact"
-                className={classes.link}
-              >
-                Contact us
+              <Grid item className={classes.owner}>
+                Владелец интернет-магазина: ООО «San Florin»
+              </Grid>
+              <Grid item>
+                <p className={classes.ownerInfo}>
+                  Юр.адрес: Республика Беларусь, г. Минск, 220013, ул. П.Бровки,
+                  22, каб. 210а
+                </p>
+                <p className={classes.ownerInfo}>
+                  Регистрация №100281103, 06.05.2021, Мингорисполком
+                </p>
+                <p className={classes.ownerInfo}>
+                  Регистрация в торговом реестре Республики Беларусь от
+                  13.08.2019 УНП 100281103
+                </p>
+                <p className={classes.ownerInfo}>
+                  Режим работы: пн-пт, 9.00-17.00
+                </p>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Hidden>
-      {/* <img
-        alt="black decorative slash"
-        src={footerBackground}
-        className={classes.adornment}
-      /> */}
     </footer>
   );
 }
