@@ -41,6 +41,15 @@ const useStyles = makeStyles(theme => ({
     fontSize: "16px",
     textDecoration: "none"
   },
+  navLink:{
+    color: "white",
+    fontFamily: "RobotoLight",
+    fontSize: "16px",
+    textDecoration: "none",
+    "&:hover": {
+      color: theme.palette.common.kosorange
+    }
+  },
   gridItem: {
     margin: "3em"
   },
@@ -129,7 +138,7 @@ export default function Footer(props) {
 
   return (
     <footer className={classes.footer}>
-      <Hidden mdDown>
+     
         <Grid container justify="center" className={classes.mainContainer}>
           <Grid item className={classes.gridItem}>
             <Grid container direction="column" spacing={2}>
@@ -216,11 +225,12 @@ export default function Footer(props) {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item className={classes.gridItem}>
+
+         <Hidden smDown><Grid item className={classes.gridItem}>
             <Grid container direction="column" spacing={2}>
               <Grid
                 item
-                className={classes.link}
+                className={classes.navLink}
                 component={Link}
                 onClick={() => {
                   props.setValue(1);
@@ -237,7 +247,7 @@ export default function Footer(props) {
                   props.setValue(2);
                 }}
                 to="/catalog"
-                className={classes.link}
+                className={classes.navLink}
               >
                 Каталог
               </Grid>
@@ -249,7 +259,7 @@ export default function Footer(props) {
                   props.setValue(3);
                 }}
                 to="/contacts"
-                className={classes.link}
+                className={classes.navLink}
               >
                 Контакты
               </Grid>
@@ -261,7 +271,7 @@ export default function Footer(props) {
                   props.setValue(4);
                 }}
                 to="/partners"
-                className={classes.link}
+                className={classes.navLink}
               >
                 Партнеры
               </Grid>
@@ -272,13 +282,17 @@ export default function Footer(props) {
                   props.setValue(5);
                 }}
                 to="/news"
-                className={classes.link}
+                className={classes.navLink}
               >
                 Новости
               </Grid>
             </Grid>
           </Grid>
-          <Grid item className={classes.support}>
+          </Hidden>
+          
+        
+
+         <Hidden mdDown><Grid item className={classes.support}>
             <Grid
               container
               direction="row"
@@ -328,9 +342,14 @@ export default function Footer(props) {
                 </p>
               </Grid>
             </Grid>
+          </Grid> 
+          </Hidden>
+          
+
           </Grid>
-        </Grid>
-      </Hidden>
+        
+        
+     
     </footer>
   );
 }

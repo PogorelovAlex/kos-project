@@ -28,8 +28,8 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     fontSize: "16px",
     color: "#696763",
-    marginBottom: "18px",
-    marginTop: "5px",
+    marginBottom: "30px",
+    marginTop: "15px",
 
     "&:before": {
       content: "''",

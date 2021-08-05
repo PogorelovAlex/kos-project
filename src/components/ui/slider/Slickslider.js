@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 
     width: "1140px",
     height: "auto",
-    marginTop:"30px"
+    marginTop:"40px"
   },
   slide: {
     display:"flex",

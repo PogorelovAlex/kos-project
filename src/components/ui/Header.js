@@ -117,12 +117,16 @@ const useStyles = makeStyles(theme => ({
     width: "50px"
   },
   drawer: {
-    backgroundColor: theme.palette.common.arcblue
+    backgroundColor: theme.palette.common.maingreen,
+    width:"200px"
   },
   drawerItem: {
     ...theme.typography.tab,
     color: "white",
-    opacity: 0.7
+    opacity: 0.7,
+    "&:hover": {
+      color: theme.palette.common.kosorange
+    }
   },
   drawerItemSelected: {
     "& .MuiListItemText-root": { opacity: 1 }
@@ -170,38 +174,7 @@ function Header(props) {
     setOpenMenu(false);
   };
 
-  // const menuOptions = [
-  //   {
-  //     name: "О КОМПАНИИ",
-  //     link: "/company",
-  //     activeIndex: 1,
-  //     selectedIndex: 0
-  //   },
-  //   {
-  //     name: "КАТАЛОГ",
-  //     link: "/catalog",
-  //     activeIndex: 1,
-  //     selectedIndex: 1
-  //   },
-  //   {
-  //     name: "КОНТАКТЫ",
-  //     link: "/contacts",
-  //     activeIndex: 1,
-  //     selectedIndex: 2
-  //   },
-  //   {
-  //     name: "ПАРТНЕРЫ",
-  //     link: "/partners",
-  //     activeIndex: 1,
-  //     selectedIndex: 3
-  //   },
-  //   {
-  //     name: "НОВОСТИ",
-  //     link: "/news",
-  //     activeIndex: 1,
-  //     selectedIndex: 4
-  //   }
-  // ];
+  
   const routes = [
     { name: "О КОМПАНИИ", link: "/company", activeIndex: 1 },
     { name: "КАТАЛОГ", link: "/catalog", activeIndex: 2 },
@@ -223,9 +196,7 @@ function Header(props) {
             }
           }
           break;
-        case "/estimate":
-          props.setValue(5);
-          break;
+        
         default:
           break;
       }
@@ -288,25 +259,7 @@ function Header(props) {
             </ListItem>
           ))}
 
-          <ListItem
-            onClick={() => {
-              setOpenDrawer(false);
-              props.setValue(5);
-            }}
-            divider
-            button
-            component={Link}
-            to="/estimate"
-            classes={{
-              root: classes.drawerItemEstimate,
-              selected: classes.drawerItemSeleted
-            }}
-            selected={props.value === 5}
-          >
-            <ListItemText className={classes.drawerItem} disableTypography>
-              Free Estimate
-            </ListItemText>
-          </ListItem>
+         
         </List>
       </SwipeableDrawer>
       <IconButton
