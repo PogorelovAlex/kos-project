@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-
+import PhoneInTalkOutlinedIcon from "@material-ui/icons/PhoneInTalkOutlined";
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) =>({
         display:"flex",
         flexDirection:"row",
         justifyContent:"flex-end",
-        marginRight:"50px"
+        
+        
     },
     phone:{
         color: "#fff",
@@ -30,21 +31,31 @@ const useStyles = makeStyles((theme) =>({
         fontFamily: "Philosopher",
         fontSize: "30px",
         lineHeight: "27px",
-       
+        
         "&:hover": {
             backgroundColor: "transparent",
-            color:"#8cca67",
+            color:theme.palette.common.kosorange,
             cursor: "pointer"
           }
+    },
+    supportLogo: {
+      color: "#FFF",
+      fontSize: "2rem",
+      "&:hover": {
+       
+        color:theme.palette.common.kosorange,
+        cursor: "pointer"
+      }
     },
     iconContainer:{
         
         display:"flex",
-        alignItems:"center"
+        alignItems:"center",
+        justifyContent:"flex-end"
     },
     searchButton:{
         ...theme.typography.iconButton,
-        fontSize:"20px",
+        fontSize:"15px",
     },
     cartButton:{
         color:"#FFFF",     
@@ -56,6 +67,7 @@ const useStyles = makeStyles((theme) =>({
     },
     ruButton:{
         ...theme.typography.iconButton,
+        
 },
     roButton:{
         ...theme.typography.iconButton,   
@@ -64,7 +76,7 @@ const useStyles = makeStyles((theme) =>({
     langContainer:{
         width:"auto"
     },
-    
+   
 }));
 
 const StyledToggleButtonGroup = withStyles((theme) => ({
@@ -96,8 +108,9 @@ const handleAlignment = (event, newAlignment) => {
   return (
     <Grid container direction="column" className={classes.mainContainer}>
         <Grid item  className={classes.phoneContainer} >
+        
             <Button  className={classes.phone}>
-                060134345
+            <PhoneInTalkOutlinedIcon className={classes.supportLogo} />  060134345
             </Button>
         </Grid>
         <Grid container direction="row" className={classes.iconContainer}>

@@ -92,10 +92,12 @@ export default createTheme({
   },
   overrides: {
     MuiToggleButton: {
-      root: {
+      root: { 
+        fontSize:"0.7rem",
         "&$selected": {
           backgroundColor: "#fff",
           color:"#8cca67",
+         
        
         "&:hover": {
           backgroundColor: "rgba(255,255,255,0.7)",

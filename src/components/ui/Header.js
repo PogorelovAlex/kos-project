@@ -5,6 +5,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import Hidden from "@material-ui/core/Hidden";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -14,6 +15,7 @@ import Tab from "@material-ui/core/Tab";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+
 import { IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import List from "@material-ui/core/List";
@@ -53,11 +55,10 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    width: "82rem",
+    width: "1140px",
     height: "100%"
   },
   logoContainer: {
-    paddingLeft: "50px",
     "&:hover": {
       backgroundColor: "transparent"
     }
@@ -71,7 +72,8 @@ const useStyles = makeStyles(theme => ({
   navTitleContainer: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "center"
   },
   navTitle: {
     fontSize: "30px",
@@ -80,8 +82,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "Philosopher",
     letterSpacing: "-0.05",
     alignItems: "center",
-    marginTop: "1.7rem",
-    marginRight: "3.5rem"
+    marginTop: "1.7rem"
   },
   tabContainer: {
     paddingBottom: "1rem"
@@ -118,7 +119,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawer: {
     backgroundColor: theme.palette.common.maingreen,
-    width:"200px"
+    width: "200px"
   },
   drawerItem: {
     ...theme.typography.tab,
@@ -140,6 +141,11 @@ const useStyles = makeStyles(theme => ({
     zIndex: theme.zIndex.modal + 1,
     position: "inherit",
     paddingBottom: "1rem"
+  },
+  supportLogo: {
+    color: "#FFF",
+    fontSize: "2.5rem",
+    marginRight: "5px"
   }
 }));
 
@@ -174,7 +180,6 @@ function Header(props) {
     setOpenMenu(false);
   };
 
-  
   const routes = [
     { name: "О КОМПАНИИ", link: "/company", activeIndex: 1 },
     { name: "КАТАЛОГ", link: "/catalog", activeIndex: 2 },
@@ -196,7 +201,7 @@ function Header(props) {
             }
           }
           break;
-        
+
         default:
           break;
       }
@@ -258,8 +263,6 @@ function Header(props) {
               </ListItemText>
             </ListItem>
           ))}
-
-         
         </List>
       </SwipeableDrawer>
       <IconButton
@@ -275,7 +278,7 @@ function Header(props) {
   return (
     <Grid container direction="column" className={classes.mainContainer}>
       <Grid container className={classes.headerContainer}>
-        <Grid item sm className={classes.logo}>
+        <Grid container item sm={6} md className={classes.logo}>
           <Button
             component={Link}
             to="/"
@@ -285,12 +288,15 @@ function Header(props) {
             <img alt="company logo" src={logo} className={classes.logo} />
           </Button>
         </Grid>
-        <Grid item sm={6} className={classes.navbarContainer}>
-          <Grid item className={classes.navTitleContainer}>
-            <Typography className={classes.navTitle}>
-              БЕЛОРУССКАЯ КОСМЕТИКА
-            </Typography>
-          </Grid>
+        <Grid container  item sm={6} md={6} className={classes.navbarContainer}>
+          <Hidden mdDown>
+            <Grid  item className={classes.navTitleContainer}>
+              <Typography className={classes.navTitle}>
+                БЕЛОРУССКАЯ КОСМЕТИКА
+              </Typography>
+            </Grid>
+          </Hidden>
+
           <React.Fragment>
             <ElevationScroll>
               <AppBar className={classes.appbar}>
@@ -299,9 +305,11 @@ function Header(props) {
             </ElevationScroll>
           </React.Fragment>
         </Grid>
-        <Grid item sm className={classes.navbarContainer}>
-          <Cart />
-        </Grid>
+        <Hidden mdDown>
+          <Grid container  item  md className={classes.navbarContainer}>
+            <Cart />
+          </Grid>
+        </Hidden>
       </Grid>
     </Grid>
   );
