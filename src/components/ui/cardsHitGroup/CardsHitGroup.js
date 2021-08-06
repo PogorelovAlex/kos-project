@@ -10,6 +10,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import Button from "@material-ui/core/Button";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -32,14 +33,24 @@ const useStyles = makeStyles(theme => ({
     margin: "0 13px 30px 11px",
     padding: "30px",
     boxShadow: "none",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
+    [theme.breakpoints.down("md")]: {
+      width: "220px",
+      margin: "0 5px 30px 5px",
+      padding: "10px"
+    }
   },
   media: {
     height: "184px",
     width: "184px",
     alignItems: "center"
   },
-  mainContainer: {},
+  mainContainer: {
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      width: "680px"
+    }
+  },
   cardButton: {
     width: "100%",
     color: "#FFFF",
@@ -61,6 +72,7 @@ const useStyles = makeStyles(theme => ({
 function CardsHitGroup(props) {
   const classes = useStyles();
   const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
   const cardContent = [
     {
@@ -130,9 +142,48 @@ function CardsHitGroup(props) {
       ))}
     </React.Fragment>
   );
+  const cardXs = (
+    <React.Fragment>
+      {console.log(cardContent.slice(0, 1))}
+      {cardContent.slice(0, 1).map((card, index) => (
+        <Card key={`${card.title}${index}`} className={classes.root}>
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image={card.image}
+              title={card.title}
+            />
+            <CardContent className={classes.contentContainer}>
+              <Typography gutterBottom variant="h5" component="h2">
+                {card.price}
+              </Typography>
+              <Typography
+                className={classes.productinfoTitle}
+                variant="body2"
+                color="textSecondary"
+                component="p"
+              >
+                {card.contentText}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.cardButton}
+              startIcon={<ShoppingCartIcon />}
+            >
+              В корзину
+            </Button>
+          </CardActions>
+        </Card>
+      ))}
+    </React.Fragment>
+  );
   return (
     <Grid container direction="row" className={classes.mainContainer}>
-      {card}
+      {matches ? cardXs : card}
     </Grid>
   );
 }

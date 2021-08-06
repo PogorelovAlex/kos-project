@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
+import Hidden from "@material-ui/core/Hidden";
 
 import Slickslider from "./ui/slider/Slickslider";
 import CardsHitGroup from "./ui/cardsHitGroup/CardsHitGroup";
@@ -14,12 +15,14 @@ import logo from "../assets/logoButtonBG.jpg";
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {
-    alignItems: "center"
+    alignItems: "center",
+    flexWrap:"nowrap"
   },
   contentContainer: {
     alignItems: "center",
     width: "1140px"
   },
+
   devider: {
     width: "100%",
     position: "relative",
@@ -59,8 +62,8 @@ const useStyles = makeStyles(theme => ({
   newsContainer: {
     alignItems: "center",
     width: "1140px",
-    height:"220px",
-    marginBottom:"30px"
+    height: "220px",
+    marginBottom: "30px"
   },
   newsLogo: {
     "&:hover": {
@@ -78,28 +81,28 @@ const useStyles = makeStyles(theme => ({
     display: "block",
     color: "#272727",
     fontSize: "28px",
-    fontWeight:"300",
+    fontWeight: "300",
     fontFamily: "MuseoSans100,sans-serif",
     marginBottom: "25px",
     lineHeight: "1",
     "&:hover": {
       color: theme.palette.common.maingreen,
-      backgroundColor:"transparent"
+      backgroundColor: "transparent"
     }
   },
-  newsContentText:{
+  newsContentText: {
     display: "block",
     color: "#272727",
     fontSize: "14px",
-    fontFamily: "MuseoSans100,sans-serif",
+    fontFamily: "MuseoSans100,sans-serif"
   },
-  aboutText:{
-    maxWidth:"1142px",
+  aboutText: {
+    maxWidth: "1142px",
     fontSize: "16px",
     fontFamily: "MuseoSans100,sans-serif",
     color: "#404040",
     lineHeight: "32px"
-  },
+  }
 }));
 
 function LandingPage() {
@@ -107,9 +110,11 @@ function LandingPage() {
   const theme = useTheme();
 
   return (
-    <Grid container>
+  
       <Grid container direction="column" className={classes.mainContainer}>
-        <Slickslider />
+        
+          <Slickslider />
+        
 
         <Grid
           item
@@ -153,7 +158,7 @@ function LandingPage() {
             </Button>
           </Grid>
           <Grid item sm={9}>
-          <Button
+            <Button
               component={Link}
               to="/"
               className={classes.newsContent}
@@ -161,7 +166,11 @@ function LandingPage() {
             >
               ПРИГЛАШАЕМ В НОВЫЙ МАГАЗИН БЕЛОРУССКОЙ КОСМЕТИКИ BELARUS COSMETIC
             </Button>
-            <Typography className={classes.newsContentText}> Aдрес: ул. Алеко Руссо 2/2 (над подземном переходе рядом с Vaikiki)</Typography>
+            <Typography className={classes.newsContentText}>
+              {" "}
+              Aдрес: ул. Алеко Руссо 2/2 (над подземном переходе рядом с
+              Vaikiki)
+            </Typography>
           </Grid>
         </Grid>
         <Grid
@@ -174,13 +183,23 @@ function LandingPage() {
         </Grid>
         <Grid item>
           <Typography className={classes.aboutText}>
-          <p>Представляет Вашему вниманию Молдова косметику и парфюмерию, бытовую химию и зубную пасту от производителей Белорусии и Украины. Наша продукция не содержит ГМО (генетически модифицированных организмов) и опасных добавок с Е-маркировкой.</p>
+            <p>
+              Представляет Вашему вниманию Молдова косметику и парфюмерию,
+              бытовую химию и зубную пасту от производителей Белорусии и
+              Украины. Наша продукция не содержит ГМО (генетически
+              модифицированных организмов) и опасных добавок с Е-маркировкой.
+            </p>
 
-          <p>На сегодняшний день, компания San Florin представлена сетью магазинов розничной сети, и оптовой базой расположенной в центре столицы. В сети наших магазинов работают продавцы-консультанты, которые помогут Вам сделать правильный выбор.</p>
+            <p>
+              На сегодняшний день, компания San Florin представлена сетью
+              магазинов розничной сети, и оптовой базой расположенной в центре
+              столицы. В сети наших магазинов работают продавцы-консультанты,
+              которые помогут Вам сделать правильный выбор.
+            </p>
           </Typography>
         </Grid>
       </Grid>
-    </Grid>
+    
   );
 }
 

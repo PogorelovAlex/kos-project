@@ -84,6 +84,9 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     marginTop: "1.7rem"
   },
+  navbarContainer:{
+    justifyContent:"center"
+  },
   tabContainer: {
     paddingBottom: "1rem"
   },
@@ -288,9 +291,13 @@ function Header(props) {
             <img alt="company logo" src={logo} className={classes.logo} />
           </Button>
         </Grid>
-        <Grid container  item sm={6} md={6} className={classes.navbarContainer}>
+        <Grid  item sm={6} md={6} className={classes.navbarContainer}>
           <Hidden mdDown>
-            <Grid  item className={classes.navTitleContainer}>
+            <Grid
+              item
+              
+              className={classes.navTitleContainer}
+            >
               <Typography className={classes.navTitle}>
                 БЕЛОРУССКАЯ КОСМЕТИКА
               </Typography>
@@ -306,7 +313,7 @@ function Header(props) {
           </React.Fragment>
         </Grid>
         <Hidden mdDown>
-          <Grid container  item  md className={classes.navbarContainer}>
+          <Grid container item md className={classes.navbarContainer}>
             <Cart />
           </Grid>
         </Hidden>
