@@ -14,14 +14,16 @@ const useStyles = makeStyles(theme => ({
   wrapperMainContainer: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    
   },
   mainContainer: {
     display: "flex",
     flexDirection: "column",
     width: "82rem",
     height: "120rem",
-    backgroundColor: "#868686"
+    backgroundColor: "#868686",
+   
   }
 }));
 
