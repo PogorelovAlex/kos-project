@@ -49,15 +49,22 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${headerBackground})`,
     backgroundPosition: "center",
     alignItems: "center",
+<<<<<<< HEAD
     
     
     
+=======
+    [theme.breakpoints.down("md")]: {
+      
+    },
+>>>>>>> 466dc3f04fc73305f8a7988b61792957d05626c4
   },
   headerContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+<<<<<<< HEAD
     width: "81.6rem",
     height: "100%",
    
@@ -67,6 +74,10 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       width: "42.86rem"
     }
+=======
+    width: "71.4em",
+    height: "100%"
+>>>>>>> 466dc3f04fc73305f8a7988b61792957d05626c4
   },
  
   logoContainer: {
@@ -292,7 +303,11 @@ function Header(props) {
   return (
     <Grid container direction="column" className={classes.mainContainer}>
       <Grid container className={classes.headerContainer}>
+<<<<<<< HEAD
         <Grid container item  sm={9} md className={classes.logo}>
+=======
+        <Grid container item sm={2} md={3} className={classes.logo}>
+>>>>>>> 466dc3f04fc73305f8a7988b61792957d05626c4
           <Button
             component={Link}
             to="/"
@@ -302,7 +317,11 @@ function Header(props) {
             <img alt="company logo" src={logo} className={classes.logo} />
           </Button>
         </Grid>
+<<<<<<< HEAD
         <Grid  item sm={3} md className={classes.navbarContainer}>
+=======
+        <Grid  item sm={4} md={6}  className={classes.navbarContainer}>
+>>>>>>> 466dc3f04fc73305f8a7988b61792957d05626c4
           <Hidden mdDown>
             <Grid
               item

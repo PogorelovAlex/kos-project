@@ -20,7 +20,10 @@ const useStyles = makeStyles(theme => ({
   },
   contentContainer: {
     alignItems: "center",
+
     width: "81.6rem"
+
+   
   },
 
   devider: {
@@ -61,9 +64,13 @@ const useStyles = makeStyles(theme => ({
   },
   newsContainer: {
     alignItems: "center",
+
     width: "81.6rem",
+
+  
     height: "220px",
-    marginBottom: "30px"
+    marginBottom: "30px",
+    flexWrap:"nowrap"
   },
   newsLogo: {
     "&:hover": {
@@ -97,7 +104,10 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "MuseoSans100,sans-serif"
   },
   aboutText: {
+
     maxWidth: "81.6rem",
+
+    
     fontSize: "16px",
     fontFamily: "MuseoSans100,sans-serif",
     color: "#404040",
