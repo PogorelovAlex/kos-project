@@ -48,16 +48,27 @@ const useStyles = makeStyles(theme => ({
     height: "8.8rem",
     backgroundImage: `url(${headerBackground})`,
     backgroundPosition: "center",
-    alignItems: "center"
+    alignItems: "center",
+    
+    
+    
   },
   headerContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    width: "1140px",
-    height: "100%"
+    width: "81.6rem",
+    height: "100%",
+   
+    [theme.breakpoints.down("md")]: {
+      width: "54.85rem"
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "42.86rem"
+    }
   },
+ 
   logoContainer: {
     "&:hover": {
       backgroundColor: "transparent"
@@ -281,7 +292,7 @@ function Header(props) {
   return (
     <Grid container direction="column" className={classes.mainContainer}>
       <Grid container className={classes.headerContainer}>
-        <Grid container item sm={6} md className={classes.logo}>
+        <Grid container item  sm={9} md className={classes.logo}>
           <Button
             component={Link}
             to="/"
@@ -291,7 +302,7 @@ function Header(props) {
             <img alt="company logo" src={logo} className={classes.logo} />
           </Button>
         </Grid>
-        <Grid  item sm={6} md={6} className={classes.navbarContainer}>
+        <Grid  item sm={3} md className={classes.navbarContainer}>
           <Hidden mdDown>
             <Grid
               item
