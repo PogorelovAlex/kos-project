@@ -20,13 +20,6 @@ const useStyles = makeStyles(theme => ({
   pageContainer: {
     display: "flex",
     flexDirection: "column",
-<<<<<<< HEAD
-=======
-    width: "82rem",
-    height: "120rem",
-    backgroundColor: "#868686",
->>>>>>> 466dc3f04fc73305f8a7988b61792957d05626c4
-   
   }
 }));
 
