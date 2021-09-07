@@ -292,7 +292,7 @@ function Header(props) {
     <Grid container direction="column" className={classes.mainContainer}>
       <Grid container className={classes.headerContainer}>
 
-        <Grid container item  sm={9} md className={classes.logo}>
+        <Grid container item xs={6} sm={9} md className={classes.logo}>
 
         
           <Button
@@ -305,7 +305,7 @@ function Header(props) {
           </Button>
         </Grid>
 
-        <Grid  item sm={3} md className={classes.navbarContainer}>
+        <Grid  item xs={6} sm={3} md className={classes.navbarContainer}>
 
        
           <Hidden mdDown>

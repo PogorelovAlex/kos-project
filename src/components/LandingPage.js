@@ -15,15 +15,14 @@ import logo from "../assets/logoButtonBG.jpg";
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {
+    maxWidth: "81.6rem",
     alignItems: "center",
-    flexWrap:"nowrap"
+    flexWrap: "nowrap"
   },
   contentContainer: {
     alignItems: "center",
 
-    width: "81.6rem"
-
-   
+  
   },
 
   devider: {
@@ -64,13 +63,9 @@ const useStyles = makeStyles(theme => ({
   },
   newsContainer: {
     alignItems: "center",
-
-    width: "81.6rem",
-
-  
     height: "220px",
     marginBottom: "30px",
-    flexWrap:"nowrap"
+    flexWrap: "nowrap"
   },
   newsLogo: {
     "&:hover": {
@@ -104,10 +99,8 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "MuseoSans100,sans-serif"
   },
   aboutText: {
-
     maxWidth: "81.6rem",
 
-    
     fontSize: "16px",
     fontFamily: "MuseoSans100,sans-serif",
     color: "#404040",
@@ -120,96 +113,93 @@ function LandingPage() {
   const theme = useTheme();
 
   return (
-  
-      <Grid container direction="column" className={classes.mainContainer}>
-        
-          <Slickslider />
-        
+    <Grid container direction="column" className={classes.mainContainer}>
+      <Slickslider />
 
-        <Grid
-          item
-          container
-          direction="column"
-          className={classes.contentContainer}
-        >
-          <div className={classes.devider}>ХИТ ПРОДАЖ</div>
+      <Grid
+        item
+        container
+        direction="column"
+        className={classes.contentContainer}
+      >
+        <div className={classes.devider}>ХИТ ПРОДАЖ</div>
+      </Grid>
+      <Grid item>
+        <CardsHitGroup />
+      </Grid>
+      <Grid
+        item
+        container
+        direction="column"
+        className={classes.contentContainer}
+      >
+        <div className={classes.devider}>НОВИНКИ</div>
+      </Grid>
+      <Grid item>
+        <CardsFreshGroup />
+      </Grid>
+      <Grid
+        item
+        container
+        direction="column"
+        className={classes.contentContainer}
+      >
+        <div className={classes.devider}>НОВОСТИ</div>
+      </Grid>
+      <Grid container direction="row" className={classes.newsContainer}>
+      <Hidden mdDown>
+        <Grid item xs={12} sm={3}>
+          <Button
+            component={Link}
+            to="/"
+            className={classes.newsLogo}
+            disableRipple
+          >
+            <img alt="promo logo" src={logo} className={classes.logo} />
+          </Button>
         </Grid>
-        <Grid item>
-          <CardsHitGroup />
-        </Grid>
-        <Grid
-          item
-          container
-          direction="column"
-          className={classes.contentContainer}
-        >
-          <div className={classes.devider}>НОВИНКИ</div>
-        </Grid>
-        <Grid item>
-          <CardsFreshGroup />
-        </Grid>
-        <Grid
-          item
-          container
-          direction="column"
-          className={classes.contentContainer}
-        >
-          <div className={classes.devider}>НОВОСТИ</div>
-        </Grid>
-        <Grid container direction="row" className={classes.newsContainer}>
-          <Grid item sm={3}>
-            <Button
-              component={Link}
-              to="/"
-              className={classes.newsLogo}
-              disableRipple
-            >
-              <img alt="promo logo" src={logo} className={classes.logo} />
-            </Button>
-          </Grid>
-          <Grid item sm={9}>
-            <Button
-              component={Link}
-              to="/"
-              className={classes.newsContent}
-              disableRipple
-            >
-              ПРИГЛАШАЕМ В НОВЫЙ МАГАЗИН БЕЛОРУССКОЙ КОСМЕТИКИ BELARUS COSMETIC
-            </Button>
-            <Typography className={classes.newsContentText}>
-              {" "}
-              Aдрес: ул. Алеко Руссо 2/2 (над подземном переходе рядом с
-              Vaikiki)
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid
-          item
-          container
-          direction="column"
-          className={classes.contentContainer}
-        >
-          <div className={classes.devider}>О НАС</div>
-        </Grid>
-        <Grid item>
-          <Typography className={classes.aboutText}>
-            <p>
-              Представляет Вашему вниманию Молдова косметику и парфюмерию,
-              бытовую химию и зубную пасту от производителей Белорусии и
-              Украины. Наша продукция не содержит ГМО (генетически
-              модифицированных организмов) и опасных добавок с Е-маркировкой.
-            </p>
-
-            <p>
-              На сегодняшний день, компания San Florin представлена сетью
-              магазинов розничной сети, и оптовой базой расположенной в центре
-              столицы. В сети наших магазинов работают продавцы-консультанты,
-              которые помогут Вам сделать правильный выбор.
-            </p>
+        </Hidden>
+        <Grid item xs={12} sm={9}>
+          <Button
+            component={Link}
+            to="/"
+            className={classes.newsContent}
+            disableRipple
+          >
+            ПРИГЛАШАЕМ В НОВЫЙ МАГАЗИН БЕЛОРУССКОЙ КОСМЕТИКИ BELARUS COSMETIC
+          </Button>
+          <Typography className={classes.newsContentText}>
+            {" "}
+            Aдрес: ул. Алеко Руссо 2/2 (над подземном переходе рядом с Vaikiki)
           </Typography>
         </Grid>
       </Grid>
-    
+      <Grid
+        item
+        container
+        direction="column"
+        className={classes.contentContainer}
+      >
+        <div className={classes.devider}>О НАС</div>
+      </Grid>
+      <Grid item>
+        <Typography className={classes.aboutText}>
+          <p>
+            Представляет Вашему вниманию Молдова косметику и парфюмерию, бытовую
+            химию и зубную пасту от производителей Белорусии и Украины. Наша
+            продукция не содержит ГМО (генетически модифицированных организмов)
+            и опасных добавок с Е-маркировкой.
+          </p>
+
+          <p>
+            На сегодняшний день, компания San Florin представлена сетью
+            магазинов розничной сети, и оптовой базой расположенной в центре
+            столицы. В сети наших магазинов работают продавцы-консультанты,
+            которые помогут Вам сделать правильный выбор.
+          </p>
+        </Typography>
+      </Grid>
+    </Grid>
   );
 }
 

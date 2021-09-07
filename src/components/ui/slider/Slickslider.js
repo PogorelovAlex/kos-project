@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
       maxWidth: "728px"
     },
     [theme.breakpoints.down("xs")]: {
-      maxWidth: "460px"
+      maxWidth: "320px"
     }
   },
   slide: {

@@ -47,9 +47,7 @@ const useStyles = makeStyles(theme => ({
   },
   mainContainer: {
     width: "100%",
-    [theme.breakpoints.down("sm")]: {
-      width: "680px"
-    }
+    
   },
   cardButton: {
     width: "100%",
