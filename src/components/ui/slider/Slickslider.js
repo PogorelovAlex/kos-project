@@ -27,12 +27,16 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("md")]: {
       maxWidth: "948px"
     },
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "728px"
+    [theme.breakpoints.between('sm', 'md')]: {
+      maxWidth: "750px"
     },
-    [theme.breakpoints.down("xs")]: {
-      maxWidth: "320px"
-    }
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: "600px"
+    },
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: "350px"
+    },
+    
   },
   slide: {
     display: "flex",
@@ -59,29 +63,37 @@ function Slickslider(props) {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3500,
-    pauseOnHover: true
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false
+        }
+      }
+    ]
   };
 
   return (
-    
-      <Slider className={classes.sliderContainer} {...settings}>
-        <div className={classes.slide}>
-          <img src={imageUrl1} className={classes.sliderItem} />
-        </div>
-        <div className={classes.slide}>
-          <img src={imageUrl2} className={classes.sliderItem} />
-        </div>
-        <div className={classes.slide}>
-          <img src={imageUrl3} className={classes.sliderItem} />
-        </div>
-        <div className={classes.slide}>
-          <img src={imageUrl4} className={classes.sliderItem} />
-        </div>
-        <div className={classes.slide}>
-          <img src={imageUrl5} className={classes.sliderItem} />
-        </div>
-      </Slider>
-   
+    <Slider className={classes.sliderContainer} {...settings}>
+      <div className={classes.slide}>
+        <img src={imageUrl1} className={classes.sliderItem} />
+      </div>
+      <div className={classes.slide}>
+        <img src={imageUrl2} className={classes.sliderItem} />
+      </div>
+      <div className={classes.slide}>
+        <img src={imageUrl3} className={classes.sliderItem} />
+      </div>
+      <div className={classes.slide}>
+        <img src={imageUrl4} className={classes.sliderItem} />
+      </div>
+      <div className={classes.slide}>
+        <img src={imageUrl5} className={classes.sliderItem} />
+      </div>
+    </Slider>
   );
 }
 

@@ -4,6 +4,10 @@ import { useTheme } from "@material-ui/core/styles";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Slider from "react-slick";
+
+import "./slick.css";
+import "./slick-theme.css";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -64,6 +68,38 @@ const useStyles = makeStyles(theme => ({
     fontSize: "14px",
     maxHeight: "40px",
     height: "40px"
+  },
+  sliderContainer: {
+    width: "1140px",
+    height: "auto",
+    // flexWrap:"nowrap",
+    marginTop: "40px",
+
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "948px"
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      maxWidth: "750px"
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: "600px"
+    },
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: "350px"
+    },
+    
+  },
+  slide: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    alignItems: "center"
+  },
+  sliderItem: {
+    width: "100%",
+    height: "100%"
   }
 }));
 
@@ -104,7 +140,9 @@ function CardsHitGroup(props) {
   ];
   const card = (
     <React.Fragment>
+       
       {cardContent.map((card, index) => (
+        // <div className={classes.slide}>
         <Card key={`${card.title}${index}`} className={classes.root}>
           <CardActionArea>
             <CardMedia
@@ -137,52 +175,41 @@ function CardsHitGroup(props) {
             </Button>
           </CardActions>
         </Card>
+        // </div>
       ))}
+      
     </React.Fragment>
   );
-  const cardXs = (
-    <React.Fragment>
-      {console.log(cardContent.slice(0, 1))}
-      {cardContent.slice(0, 1).map((card, index) => (
-        <Card key={`${card.title}${index}`} className={classes.root}>
-          <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              image={card.image}
-              title={card.title}
-            />
-            <CardContent className={classes.contentContainer}>
-              <Typography gutterBottom variant="h5" component="h2">
-                {card.price}
-              </Typography>
-              <Typography
-                className={classes.productinfoTitle}
-                variant="body2"
-                color="textSecondary"
-                component="p"
-              >
-                {card.contentText}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.cardButton}
-              startIcon={<ShoppingCartIcon />}
-            >
-              В корзину
-            </Button>
-          </CardActions>
-        </Card>
-      ))}
-    </React.Fragment>
-  );
+  const settings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 4,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false
+        }
+      }
+    ]
+  };
   return (
+   
     <Grid container direction="row" className={classes.mainContainer}>
-      {matches ? cardXs : card}
+      <Slider className={classes.sliderContainer} {...settings}>
+      {card}
+      </Slider>
+      
     </Grid>
+   
   );
 }
 

@@ -56,14 +56,14 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     justifyContent: "center",
 
-    width: "81.6rem",
+    maxWidth: "81.6rem",
     height: "100%",
    
     [theme.breakpoints.down("md")]: {
-      width: "54.85rem"
+      maxWidth: "50.85rem"
     },
     [theme.breakpoints.down("sm")]: {
-      width: "42.86rem"
+      maxWidth: "40.86rem"
     }
 
   },
@@ -75,7 +75,7 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     display: "flex",
-    flexDirection: "column",
+   
     height: "5.5em",
     alignItems: "center"
   },
