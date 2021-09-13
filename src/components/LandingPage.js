@@ -7,9 +7,11 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import Slickslider from "./ui/slider/Slickslider";
 import CardsHitGroup from "./ui/cardsHitGroup/CardsHitGroup";
+import MobCardsHitGroup from "./ui/cardsHitGroup/mobCardsHitGroup/MobCardsHitGroup";
 import CardsFreshGroup from "./ui/cardsFreshGroup/CardsFreshGroup";
 import logo from "../assets/logoButtonBG.jpg";
 
@@ -111,6 +113,7 @@ const useStyles = makeStyles(theme => ({
 function LandingPage() {
   const classes = useStyles();
   const theme = useTheme();
+  const matchesXs = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <Grid container direction="column" className={classes.mainContainer}>
@@ -125,7 +128,7 @@ function LandingPage() {
         <div className={classes.devider}>ХИТ ПРОДАЖ</div>
       </Grid>
       <Grid item>
-        <CardsHitGroup />
+        {matchesXs? <MobCardsHitGroup/>:<CardsHitGroup />}
       </Grid>
       <Grid
         item
